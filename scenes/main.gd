@@ -41,7 +41,6 @@ func _shuffle(list):
 
 
 func _win():
-	get_tree().paused = true
 	var scene = load("res://ui/game_over/game_over.tscn")
 	var instance = scene.instance()
 	instance.set_title("You Escaped!")

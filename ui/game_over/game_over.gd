@@ -5,6 +5,7 @@ var _can_handle_input = false
 
 
 func _ready():
+	get_tree().paused = true
 	$AnimationPlayer.play("fade")
 
 
