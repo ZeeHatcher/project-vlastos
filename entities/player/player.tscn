@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://entities/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Rotoscoped zombie and soldier/Rotoscoped zombie and soldier/Spritesheet/soldier-walking.png" type="Texture" id=2]
 [ext_resource path="res://entities/gun/gun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/flashlight_glow.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -113,3 +114,7 @@ frame = 3
 shape = SubResource( 19 )
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+shadow_enabled = true
