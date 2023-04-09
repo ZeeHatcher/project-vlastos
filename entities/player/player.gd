@@ -3,6 +3,7 @@ extends KinematicBody2D
 
 export(int) var speed = 200
 export(float) var slowness_multiplier = 0.5
+export(float) var dot_threshold = 0.5
 
 var _velocity = Vector2()
 var _facing = Vector2.UP
@@ -36,7 +37,7 @@ func _handle_animation():
 
 func _handle_movement():
 	var dot = _velocity.normalized().dot(_facing)
-	var sp = speed if dot > 0 else speed * slowness_multiplier
+	var sp = speed if dot > dot_threshold else speed * slowness_multiplier
 	
 	_velocity = _velocity.normalized() * sp
 	_velocity = move_and_slide(_velocity)
