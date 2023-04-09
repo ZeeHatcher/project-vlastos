@@ -112,3 +112,6 @@ frame = 3
 shape = SubResource( 19 )
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
