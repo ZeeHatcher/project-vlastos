@@ -9,4 +9,7 @@ script = ExtResource( 1 )
 wait_time = 0.5
 one_shot = true
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+cast_to = Vector2( 2000, 0 )
+
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]
