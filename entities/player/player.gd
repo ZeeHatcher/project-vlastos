@@ -2,6 +2,8 @@ extends KinematicBody2D
 class_name Player
 
 
+signal dead
+
 export(int) var speed = 200
 export(float) var slowness_multiplier = 0.5
 
@@ -34,6 +36,11 @@ func _get_input():
 func _unhandled_input(event):
 	if event.is_action_pressed("shoot"):
 		_gun.shoot()
+
+
+func die():
+	emit_signal("dead")
+	queue_free()
 
 
 func _handle_animation():
