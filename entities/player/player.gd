@@ -11,6 +11,7 @@ onready var _sprite = $AnimatedSprite
 func _physics_process(delta):
 	_get_input()
 	_handle_animation()
+	_face()
 	_velocity = move_and_slide(_velocity)
 
 
@@ -30,3 +31,10 @@ func _get_input():
 func _handle_animation():
 	var is_moving = _velocity != Vector2.ZERO
 	_sprite.playing = is_moving
+
+
+func _face():
+	var mouse_position = get_viewport().get_mouse_position()
+	var direction = global_position.direction_to(mouse_position)
+	
+	_sprite.rotation = direction.angle() + PI / 2
