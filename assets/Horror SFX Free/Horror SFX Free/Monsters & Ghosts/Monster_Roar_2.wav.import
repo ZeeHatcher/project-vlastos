@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Monster_Roar_2.wav-81a624d4e93c684ed2983c7a7cf21db3.sample"
+
+[deps]
+
+source_file="res://assets/Horror SFX Free/Horror SFX Free/Monsters & Ghosts/Monster_Roar_2.wav"
+dest_files=[ "res://.import/Monster_Roar_2.wav-81a624d4e93c684ed2983c7a7cf21db3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

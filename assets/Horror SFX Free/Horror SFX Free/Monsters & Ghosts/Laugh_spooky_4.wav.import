@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Laugh_spooky_4.wav-a46495afd398cee99f9b3d1f920bf643.sample"
+
+[deps]
+
+source_file="res://assets/Horror SFX Free/Horror SFX Free/Monsters & Ghosts/Laugh_spooky_4.wav"
+dest_files=[ "res://.import/Laugh_spooky_4.wav-a46495afd398cee99f9b3d1f920bf643.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

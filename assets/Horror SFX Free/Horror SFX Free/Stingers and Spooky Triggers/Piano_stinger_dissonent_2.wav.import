@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Piano_stinger_dissonent_2.wav-e00a987a0d82c8b3fc903c44c61c1994.sample"
+
+[deps]
+
+source_file="res://assets/Horror SFX Free/Horror SFX Free/Stingers and Spooky Triggers/Piano_stinger_dissonent_2.wav"
+dest_files=[ "res://.import/Piano_stinger_dissonent_2.wav-e00a987a0d82c8b3fc903c44c61c1994.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

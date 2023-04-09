@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Drill starting.wav-b96ece5f56b46d71d04cfc419af09024.sample"
+
+[deps]
+
+source_file="res://assets/Horror SFX Free/Horror SFX Free/House & Office/Drill starting.wav"
+dest_files=[ "res://.import/Drill starting.wav-b96ece5f56b46d71d04cfc419af09024.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
