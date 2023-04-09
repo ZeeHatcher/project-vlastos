@@ -28,11 +28,6 @@ func _spawn_keys():
 		add_child(key)
 
 
-func _on_Key_collected():
-	print("collected")
-	_keys_collected += 1
-
-
 func _shuffle(list):
 	var shuffled = [] 
 	var indices = range(list.size())
@@ -41,3 +36,19 @@ func _shuffle(list):
 		shuffled.append(list[indices[x]])
 		indices.remove(x)
 	return shuffled
+
+
+func _win():
+	print("win")
+
+
+func _on_Key_collected():
+	print("collected")
+	_keys_collected += 1
+
+
+func _on_Exit_body_entered(body):
+	if _keys_collected == keys_count:
+		_win()
+	else:
+		print("not enough keys")
