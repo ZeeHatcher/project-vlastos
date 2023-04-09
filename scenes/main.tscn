@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/enemy/enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/main.gd" type="Script" id=3]
 [ext_resource path="res://ui/help_text.tscn" type="PackedScene" id=4]
+[ext_resource path="res://map/map.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 54, 128 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Map" parent="." instance=ExtResource( 5 )]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -74,6 +77,7 @@ update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 234, 471 )
