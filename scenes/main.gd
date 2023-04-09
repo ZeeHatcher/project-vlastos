@@ -8,6 +8,7 @@ export(int) var keys_count = 3
 var _keys_collected = 0
 
 onready var _help_text = $CanvasLayer/UI/HelpText
+onready var _eyes = $CanvasLayer/UI/Eyes
 
 
 func _ready():
