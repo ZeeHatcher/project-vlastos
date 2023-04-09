@@ -6,5 +6,6 @@ onready var _animation_player = $AnimationPlayer
 
 
 func show_text(text):
+	_animation_player.stop()
 	_label.text = text
 	_animation_player.play("fade")
