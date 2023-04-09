@@ -50,7 +50,11 @@ func _handle_animation():
 
 func _handle_movement():
 	var dot = _velocity.normalized().dot(_facing)
-	var sp = speed if dot > 0 else speed * slowness_multiplier
+	var facing_forwards = dot > 0
+	
+	var sp = speed if facing_forwards else speed * slowness_multiplier
+	
+	_sprite.speed_scale = 1 if facing_forwards else slowness_multiplier
 	
 	_velocity = _velocity.normalized() * sp
 	_velocity = move_and_slide(_velocity)
