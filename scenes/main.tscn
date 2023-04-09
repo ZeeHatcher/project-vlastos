@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/enemy/enemy.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://ui/help_text/help_text.tscn" type="PackedScene" id=4]
 [ext_resource path="res://map/map.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/glow.png" type="Texture" id=6]
+[ext_resource path="res://assets/exit_sign.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 77, 161 )
@@ -96,6 +97,12 @@ texture = ExtResource( 6 )
 color = Color( 0.388235, 0.956863, 1, 1 )
 range_item_cull_mask = 3
 
+[node name="Sign" type="Sprite" parent="Exit"]
+modulate = Color( 0, 0, 0, 0.431373 )
+position = Vector2( -256, -9 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
@@ -114,6 +121,7 @@ position = Vector2( 3672, -1581 )
 position = Vector2( 1915, 1300 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 3201, -12 )
 speed = 500
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -122,6 +130,7 @@ update_rotation = false
 update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 3201, -12 )
 current = true
 zoom = Vector2( 2, 2 )
 
