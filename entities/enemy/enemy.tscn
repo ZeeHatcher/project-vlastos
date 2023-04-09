@@ -2,10 +2,10 @@
 
 [ext_resource path="res://entities/enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/Rotoscoped zombie and soldier/Rotoscoped zombie and soldier/Spritesheet/zombie-walking.png" type="Texture" id=2]
-[ext_resource path="res://entities/enemy/state_machine.gd" type="Script" id=3]
-[ext_resource path="res://entities/enemy/roam_state.gd" type="Script" id=4]
-[ext_resource path="res://entities/enemy/death_state.gd" type="Script" id=5]
-[ext_resource path="res://entities/enemy/hunt_state.gd" type="Script" id=6]
+[ext_resource path="res://entities/enemy/states/state_machine.gd" type="Script" id=3]
+[ext_resource path="res://entities/enemy/states/roam_state.gd" type="Script" id=4]
+[ext_resource path="res://entities/enemy/states/death_state.gd" type="Script" id=5]
+[ext_resource path="res://entities/enemy/states/hunt_state.gd" type="Script" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
