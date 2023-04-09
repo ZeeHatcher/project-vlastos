@@ -93,7 +93,7 @@ monitorable = false
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-speed = 1000
+speed = 500
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -105,7 +105,7 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.113725, 0.113725, 0.113725, 1 )
+color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
