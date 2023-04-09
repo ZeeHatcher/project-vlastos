@@ -52,5 +52,5 @@ func _face():
 	var mouse_position = get_viewport().get_mouse_position()
 	var direction = global_position.direction_to(mouse_position)
 	
-	_sprite.rotation = direction.angle() + PI / 2
+	rotation = direction.angle()
 	_facing = direction
