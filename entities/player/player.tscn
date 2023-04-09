@@ -106,13 +106,10 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -19, 0 )
 frames = SubResource( 18 )
-frame = 7
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 19 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
