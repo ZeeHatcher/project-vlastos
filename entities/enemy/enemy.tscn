@@ -93,3 +93,5 @@ script = ExtResource( 6 )
 
 [node name="DeathState" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
+
+[node name="Raycasts" type="Node2D" parent="."]
