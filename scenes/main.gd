@@ -41,7 +41,11 @@ func _shuffle(list):
 
 
 func _win():
-	print("win")
+	get_tree().paused = true
+	var scene = load("res://ui/game_over/game_over.tscn")
+	var instance = scene.instance()
+	instance.set_title("You Escaped!")
+	$CanvasLayer.add_child(instance)
 
 
 func _on_Key_collected():

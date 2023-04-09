@@ -33,6 +33,7 @@ tracks/0/keys = {
 }
 
 [node name="GameOver" type="CenterContainer"]
+pause_mode = 2
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0

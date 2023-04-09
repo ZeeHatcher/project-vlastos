@@ -15,8 +15,10 @@ func _input(event):
 	var is_button = event is InputEventKey or event is InputEventMouseButton
 	
 	if is_button and event.pressed:
-		get_tree().change_scene("res://scenes/main.tscn")
-		get_tree().set_input_as_handled()
+		var tree = get_tree()
+		tree.change_scene("res://scenes/main.tscn")
+		tree.set_input_as_handled()
+		tree.paused = false
 
 
 func set_title(val):
