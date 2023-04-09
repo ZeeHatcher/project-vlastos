@@ -41,9 +41,17 @@ func _shuffle(list):
 
 
 func _win():
+	_show_game_over("You Escaped!")
+
+
+func _lose():
+	_show_game_over("You Died!")
+
+
+func _show_game_over(text):
 	var scene = load("res://ui/game_over/game_over.tscn")
 	var instance = scene.instance()
-	instance.set_title("You Escaped!")
+	instance.set_title(text)
 	$CanvasLayer.add_child(instance)
 
 
@@ -64,3 +72,7 @@ func _on_Exit_body_entered(body):
 		_win()
 	else:
 		_help_text.show_text("You need to find all the keys to escape.\n%d out of %d keys found." % [_keys_collected, keys_count])
+
+
+func _on_Player_dead():
+	_lose()

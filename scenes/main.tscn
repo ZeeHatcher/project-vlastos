@@ -84,3 +84,4 @@ zoom = Vector2( 2, 2 )
 position = Vector2( 234, 471 )
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]
+[connection signal="dead" from="Player" to="." method="_on_Player_dead"]
