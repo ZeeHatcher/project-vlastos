@@ -9,6 +9,7 @@ var _velocity = Vector2()
 var _facing = Vector2.UP
 
 onready var _sprite = $AnimatedSprite
+onready var _gun = $Gun
 
 
 func _physics_process(delta):
@@ -28,6 +29,11 @@ func _get_input():
 		_velocity.y += 1
 	if Input.is_action_pressed("up"):
 		_velocity.y -= 1
+
+
+func _unhandled_input(event):
+	if event.is_action_pressed("shoot"):
+		_gun.shoot()
 
 
 func _handle_animation():
