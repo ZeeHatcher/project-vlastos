@@ -115,6 +115,12 @@ shape = SubResource( 19 )
 
 [node name="Gun" parent="." instance=ExtResource( 3 )]
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Light" type="Light2D" parent="."]
 texture = ExtResource( 4 )
+shadow_enabled = true
+
+[node name="Mask" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+mode = 3
+range_item_cull_mask = 2
 shadow_enabled = true
