@@ -24,6 +24,7 @@ func _ready():
 
 func die() -> void:
 	_state_machine.transition_to("DeathState")
+	print("die")
 
 
 func _generate_raycasts() -> void:
