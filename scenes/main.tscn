@@ -1,9 +1,48 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://entities/key/key.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/main.gd" type="Script" id=3]
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="KeyLocations" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="KeyLocations"]
+position = Vector2( -392, -190 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
+
+[node name="Position2D2" type="Position2D" parent="KeyLocations"]
+position = Vector2( 5, -250 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
+
+[node name="Position2D3" type="Position2D" parent="KeyLocations"]
+position = Vector2( 414, -188 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
+
+[node name="Position2D4" type="Position2D" parent="KeyLocations"]
+position = Vector2( -392, 186 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
+
+[node name="Position2D5" type="Position2D" parent="KeyLocations"]
+position = Vector2( 0, 240 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
+
+[node name="Position2D6" type="Position2D" parent="KeyLocations"]
+position = Vector2( 405, 192 )
+__meta__ = {
+"_gizmo_extents_": 100.0
+}
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
@@ -14,6 +53,3 @@ update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-
-[node name="Key" parent="." instance=ExtResource( 2 )]
-position = Vector2( 288, 8 )
