@@ -2,7 +2,11 @@ extends Node2D
 
 signal shot
 
+export(int) var bullets = 3
+
 
 func shoot():
-	print("shoot")
-	emit_signal("shot")
+	if bullets > 0:
+		bullets -= 1
+		print("shoot")
+		emit_signal("shot")
