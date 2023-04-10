@@ -40,7 +40,6 @@ func _unhandled_input(event):
 
 func die():
 	emit_signal("dead")
-	queue_free()
 
 
 func _handle_animation():

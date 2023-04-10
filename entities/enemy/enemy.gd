@@ -20,6 +20,7 @@ onready var _collision_shape := $CollisionShape2D
 onready var _raycasts := $Raycasts
 onready var navigation_agent := $NavigationAgent2D
 onready var vision := $Vision
+onready var kill_area := $KillArea
 
 
 func _ready():
@@ -60,3 +61,8 @@ func set_target_location(target) -> void:
 
 func hear_gunshot():
 	_state_machine.transition_to("HuntState")
+
+
+func _on_KillArea_body_entered(body):
+	if body is Player:
+		body.die()

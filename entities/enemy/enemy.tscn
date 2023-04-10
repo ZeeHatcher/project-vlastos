@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://entities/enemy/enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/Rotoscoped zombie and soldier/Rotoscoped zombie and soldier/Spritesheet/zombie-walking.png" type="Texture" id=2]
@@ -74,6 +74,9 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=13]
 radius = 72.0
 
+[sub_resource type="CircleShape2D" id=14]
+radius = 142.021
+
 [node name="Enemy" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -120,6 +123,12 @@ target_desired_distance = 5.0
 wait_time = 10.0
 one_shot = true
 
+[node name="KillArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillArea"]
+shape = SubResource( 14 )
+
 [connection signal="timeout" from="StateMachine/HuntState/HuntTimer" to="StateMachine/HuntState" method="_on_HuntTimer_timeout"]
 [connection signal="timeout" from="StateMachine/HuntState/TrackTimer" to="StateMachine/HuntState" method="_on_TrackTimer_timeout"]
 [connection signal="timeout" from="ChillTimer" to="StateMachine/RoamState" method="_on_ChillTimer_timeout"]
+[connection signal="body_entered" from="KillArea" to="." method="_on_KillArea_body_entered"]
