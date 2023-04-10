@@ -3,12 +3,12 @@ class_name Enemy
 
 var direction := Vector2()
 var velocity := Vector2()
-var target_location := Vector2(1000,-700)
+var target_location := Vector2()
 var arrived := false
 
-export(int) var speed := 200
+export(int) var speed := 100
 export(int) var _hunt_time := 10
-export(int) var detection_range := 200
+export(int) var detection_range := 200 setget _set_detection_range
 export(int) var _angle_cone_of_vision := deg2rad(90.0)
 export(int) var _angle_between_rays := deg2rad(15.0)
 
@@ -19,11 +19,18 @@ onready var _state_machine := $StateMachine
 onready var _collision_shape := $CollisionShape2D
 onready var _raycasts := $Raycasts
 onready var navigation_agent := $NavigationAgent2D
+onready var vision := $Vision
 
 
 func _ready():
 	_generate_raycasts()
 	_state_machine.transition_to("RoamState")
+
+
+func _set_detection_range(val):
+	detection_range = val
+	_generate_raycasts()
+	vision.update()
 
 
 func die() -> void:
@@ -42,10 +49,6 @@ func _generate_raycasts() -> void:
 
 
 func _physics_process(delta) -> void:
-	for ray in _raycasts.get_children():
-		if ray.is_colliding() and ray.get_collider() is Player:
-			_state_machine.transition_to("HuntState")
-	
 	_state_machine.state.physics_process(delta)
 
 

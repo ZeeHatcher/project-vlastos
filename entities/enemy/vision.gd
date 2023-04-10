@@ -5,6 +5,7 @@ extends Node2D
 func _draw():
 	var center = Vector2()
 	var radius = owner.detection_range
+	
 	var start_angle = deg2rad(-45)
 	var end_angle = deg2rad(45)
 	var num_segments = 16.0

@@ -23,6 +23,10 @@ func _on_ChillTimer_timeout():
 
 
 func physics_process(delta):
+	for ray in owner._raycasts.get_children():
+		if ray.is_colliding() and ray.get_collider() is Player:
+			owner._state_machine.transition_to("HuntState")
+	
 	var direction = owner.global_position.direction_to(owner.navigation_agent.get_next_location())
 	owner.velocity = direction * owner.speed
 	owner.rotation = direction.angle()

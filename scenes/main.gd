@@ -6,6 +6,14 @@ const KeyScene = preload("res://entities/key/key.tscn")
 export(int) var keys_count = 3
 
 var _keys_collected = 0
+var aggression_level = 0
+
+var AGGRESSION_STATS = {
+	0: {"range": 200, "speed": 100},
+	1: {"range": 350, "speed": 200},
+	2: {"range": 550, "speed": 300},
+	3: {"range": 999, "speed": 400},
+}
 
 onready var _help_text = $CanvasLayer/UI/HelpText
 onready var _eyes = $CanvasLayer/UI/Eyes
@@ -77,3 +85,21 @@ func _on_Exit_body_entered(body):
 
 func _on_Player_dead():
 	_lose()
+
+
+func _on_Gun_shot():
+	var enemies = get_tree().get_nodes_in_group("Enemy")
+	for e in enemies:
+		e.hear_gunshot()
+		
+	increase_awareness()
+
+
+func increase_awareness():
+	aggression_level += 1
+	aggression_level = min(aggression_level, 3)
+	
+	var enemies = get_tree().get_nodes_in_group("Enemy")
+	for enemy in enemies:
+		enemy.speed = AGGRESSION_STATS[aggression_level]["speed"]
+		enemy.detection_range = AGGRESSION_STATS[aggression_level]["range"]

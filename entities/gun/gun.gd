@@ -10,6 +10,13 @@ onready var _timer = $CooldownTimer
 onready var _ray = $RayCast2D
 
 
+onready var world = get_viewport().get_node("Main")
+
+
+func _ready():
+	connect("shot", world, "_on_Gun_shot")
+
+
 func shoot():
 	if bullets > 0 and _can_shoot:
 		print("shoot")
@@ -22,10 +29,6 @@ func shoot():
 		bullets -= 1
 		_can_shoot = false
 		_timer.start()
-		
-		var enemies = get_tree().get_nodes_in_group("Enemy")
-		for e in enemies:
-			e.hear_gunshot()
 
 
 func _on_CooldownTimer_timeout():
