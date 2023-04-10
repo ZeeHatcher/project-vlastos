@@ -93,6 +93,7 @@ func _on_Gun_shot():
 		e.hear_gunshot()
 		
 	increase_awareness()
+	_eyes.increase()
 
 
 func increase_awareness():
