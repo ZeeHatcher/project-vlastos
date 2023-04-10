@@ -111,7 +111,6 @@ texture = ExtResource( 7 )
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( -2303, 2009 )
-detection_range = 200
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 2 )]
 position = Vector2( 1903, 4149 )

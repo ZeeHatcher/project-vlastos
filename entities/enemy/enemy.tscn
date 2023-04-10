@@ -77,7 +77,6 @@ radius = 72.0
 [node name="Enemy" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 2
 script = ExtResource( 1 )
-detection_range = 1000
 
 [node name="Vision" type="Node2D" parent="."]
 modulate = Color( 1, 0.219608, 0.219608, 0.403922 )

@@ -117,7 +117,6 @@ shape = SubResource( 19 )
 
 [node name="Light" type="Light2D" parent="."]
 texture = ExtResource( 4 )
-energy = 0.5
 shadow_enabled = true
 
 [node name="Mask" type="Light2D" parent="."]
