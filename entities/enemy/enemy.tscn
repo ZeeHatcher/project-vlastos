@@ -95,6 +95,9 @@ script = ExtResource( 4 )
 [node name="HuntState" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 
+[node name="HuntTimer" type="Timer" parent="StateMachine/HuntState"]
+wait_time = 10.0
+
 [node name="DeathState" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
 
@@ -108,4 +111,5 @@ target_desired_distance = 5.0
 wait_time = 10.0
 one_shot = true
 
+[connection signal="timeout" from="StateMachine/HuntState/HuntTimer" to="StateMachine/HuntState" method="_on_HuntTimer_timeout"]
 [connection signal="timeout" from="ChillTimer" to="StateMachine/RoamState" method="_on_ChillTimer_timeout"]
