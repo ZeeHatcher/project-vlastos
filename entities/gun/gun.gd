@@ -22,6 +22,10 @@ func shoot():
 		bullets -= 1
 		_can_shoot = false
 		_timer.start()
+		
+		var enemies = get_tree().get_nodes_in_group("Enemy")
+		for e in enemies:
+			e.hear_gunshot()
 
 
 func _on_CooldownTimer_timeout():

@@ -73,7 +73,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=13]
 radius = 72.0
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 2
 script = ExtResource( 1 )
 
@@ -97,6 +97,10 @@ script = ExtResource( 6 )
 
 [node name="HuntTimer" type="Timer" parent="StateMachine/HuntState"]
 wait_time = 10.0
+one_shot = true
+
+[node name="TrackTimer" type="Timer" parent="StateMachine/HuntState"]
+wait_time = 0.2
 
 [node name="DeathState" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
@@ -112,4 +116,5 @@ wait_time = 10.0
 one_shot = true
 
 [connection signal="timeout" from="StateMachine/HuntState/HuntTimer" to="StateMachine/HuntState" method="_on_HuntTimer_timeout"]
+[connection signal="timeout" from="StateMachine/HuntState/TrackTimer" to="StateMachine/HuntState" method="_on_TrackTimer_timeout"]
 [connection signal="timeout" from="ChillTimer" to="StateMachine/RoamState" method="_on_ChillTimer_timeout"]

@@ -53,3 +53,7 @@ func set_target_location(target) -> void:
 	arrived = false
 	target_location = target
 	navigation_agent.set_target_location(target)
+
+
+func hear_gunshot():
+	_state_machine.transition_to("HuntState")
