@@ -137,6 +137,7 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
 
 [connection signal="body_entered" from="Exit" to="." method="_on_Exit_body_entered"]

@@ -9,8 +9,8 @@ var arrived := false
 export(int) var speed := 200
 export(int) var _hunt_time := 10.0
 export(int) var _detection_range := 200.0
-export(int) var _angle_cone_of_vision := deg2rad(30.0)
-export(int) var _angle_between_rays := deg2rad(5.0)
+export(int) var _angle_cone_of_vision := deg2rad(90.0)
+export(int) var _angle_between_rays := deg2rad(15.0)
 
 onready var animated_sprite := $AnimatedSprite
 onready var chill_timer := $ChillTimer
@@ -35,7 +35,7 @@ func _generate_raycasts() -> void:
 	
 	for index in ray_count:
 		var ray := RayCast2D.new()
-		var angle = _angle_between_rays * (index - ray_count / 2.0)
+		var angle = _angle_between_rays * (index - ray_count / 2.0) + deg2rad(90.0)
 		ray.cast_to = Vector2.UP.rotated(angle) * _detection_range
 		_raycasts.add_child(ray)
 		ray.enabled = true
@@ -53,7 +53,3 @@ func set_target_location(target) -> void:
 	arrived = false
 	target_location = target
 	navigation_agent.set_target_location(target)
-
-
-func _on_ChillTimer_timeout():
-	pass # Replace with function body.
