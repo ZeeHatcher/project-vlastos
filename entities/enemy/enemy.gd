@@ -7,8 +7,8 @@ var target_location := Vector2(1000,-700)
 var arrived := false
 
 export(int) var speed := 200
-export(int) var _hunt_time := 10.0
-export(int) var _detection_range := 200.0
+export(int) var _hunt_time := 10
+export(int) var detection_range := 200
 export(int) var _angle_cone_of_vision := deg2rad(90.0)
 export(int) var _angle_between_rays := deg2rad(15.0)
 
@@ -36,7 +36,7 @@ func _generate_raycasts() -> void:
 	for index in ray_count:
 		var ray := RayCast2D.new()
 		var angle = _angle_between_rays * (index - ray_count / 2.0) + deg2rad(90.0)
-		ray.cast_to = Vector2.UP.rotated(angle) * _detection_range
+		ray.cast_to = Vector2.UP.rotated(angle) * detection_range
 		_raycasts.add_child(ray)
 		ray.enabled = true
 
