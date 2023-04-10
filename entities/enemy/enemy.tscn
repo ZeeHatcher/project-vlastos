@@ -120,7 +120,7 @@ path_desired_distance = 5.0
 target_desired_distance = 5.0
 
 [node name="ChillTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
 
 [node name="KillArea" type="Area2D" parent="."]
